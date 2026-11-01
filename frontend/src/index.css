@@ -1,0 +1,299 @@
+/* ============================================================
+   Nivara AI — Organic Wellness Editorial Design Tokens
+   A Japandi / Scandinavian-inspired wellness editorial identity
+   ============================================================ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* --- Canvases & Surfaces --- */
+    --color-bg: #FBF9F4;              /* Warm Ivory (Main page background) */
+    --color-snow: #FCFCF7;            /* Snow White (Clean content surfaces) */
+    --color-surface: #F5F1E9;         /* Soft Cream */
+    --color-surface-raised: #FCFCF7;  /* Crisp Snow White Surface */
+    --color-surface-sunken: #EEEEE9;  /* Warm Stone */
+
+    /* --- Primary & Brand Authority Tokens --- */
+    --color-forest: #1C3A13;          /* Forest Green (Primary Brand Authority) */
+    --color-primary: #1C3A13;         /* Forest Green */
+    --color-primary-hover: #142B0E;   /* Darker Forest */
+    --color-primary-subtle: #EBF3E8;  /* Soft Forest Tint */
+    --color-primary-muted: #D3DFCE;
+
+    /* --- Secondary & Botanical Accents --- */
+    --color-deep-sage: #7C775F;       /* Deep Sage (Primary supporting accent) */
+    --color-secondary: #7C775F;
+    --color-secondary-subtle: #EAE8DE;
+    --color-muted-sage: #B2AC91;      /* Muted Sage (Secondary organic accent) */
+    --color-accent: #8C9678;          /* Muted Olive */
+    --color-accent-subtle: #EFF2EB;
+    --color-warm-stone: #EEEEE9;      /* Warm Stone */
+    --color-lime: #D3FA99;            /* Lime Accent (Restrained functional emphasis) */
+
+    /* --- Risk Bands (Calm, Informative, Never Alarming) --- */
+    --color-risk-low: #8C9678;
+    --color-risk-low-bg: #EFF3EB;
+    --color-risk-low-text: #39422F;
+
+    --color-risk-moderate: #E09F3E;
+    --color-risk-moderate-bg: #FCF5EB;
+    --color-risk-moderate-text: #684814;
+
+    --color-dark-olive: #536044;
+    --color-muted-sage: #A8B39A;
+    --color-soft-sage: #DCE4D5;
+
+    --color-risk-elevated: #536044;
+    --color-risk-elevated-bg: #DCE4D5;
+    --color-risk-elevated-text: #1C3A13;
+
+    /* --- Safety & Deterministic Crisis Sanctuary (Botanical Forest & Dark Olive) --- */
+    --color-terracotta: #536044;      /* Neutralized from orange to Dark Olive */
+    --color-crisis: #536044;
+    --color-crisis-bg: #DCE4D5;
+    --color-crisis-text: #1C3A13;
+    --color-crisis-border: #A8B39A;
+
+    /* --- Editorial Typography Tokens --- */
+    --color-text-primary: #2F302B;    /* Earth Charcoal */
+    --color-text-secondary: #6F6D63;  /* Muted Earth */
+    --color-text-tertiary: #9A988D;   /* Sandstone Gray */
+    --color-text-inverse: #FBF9F4;
+
+    /* --- Borders & Dividers --- */
+    --color-border: #DAD4C8;          /* Soft Beige */
+    --color-border-subtle: #EEEEE9;   /* Warm Stone Hairline */
+    --color-divider: #E5E0D5;
+
+    /* --- Typography Families --- */
+    --font-heading: 'DM Serif Display', Georgia, serif;
+    --font-body: 'Manrope', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    /* --- Shadows (Restrained, Flat-Editorial) --- */
+    --shadow-sm: 0 1px 3px 0 rgba(47, 48, 43, 0.04);
+    --shadow-md: 0 4px 12px -2px rgba(47, 48, 43, 0.05);
+    --shadow-lg: 0 12px 28px -4px rgba(47, 48, 43, 0.07);
+
+    /* --- Radii --- */
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-2xl: 32px;
+    --radius-pill: 9999px;
+
+    /* --- BKLIT Charts Botanical Tokens --- */
+    --chart-1: #1C3A13;
+    --chart-2: #536044;
+    --chart-3: #758366;
+    --chart-4: #A8B39A;
+    --chart-5: #DCE4D5;
+    --chart-background: #FCFCF7;
+    --chart-foreground: #2F302B;
+    --chart-foreground-muted: #77766C;
+    --chart-label: #536044;
+    --chart-line-primary: #1C3A13;
+    --chart-line-secondary: #536044;
+    --chart-crosshair: #1C3A13;
+    --chart-grid: #DAD4C8;
+    --chart-tooltip-background: #FCFCF7;
+
+    /* --- Smooth Transitions --- */
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    --duration-fast: 150ms;
+    --duration-normal: 280ms;
+    --duration-slow: 450ms;
+
+    color-scheme: light;
+  }
+
+  html {
+    font-family: var(--font-body);
+    color: var(--color-text-primary);
+    background-color: var(--color-bg);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+
+  html::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
+  body {
+    min-height: 100vh;
+    background-color: var(--color-bg);
+    color: var(--color-text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+
+  body::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
+  /* Global utility to suppress scrollbars on all containers */
+  * {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  *::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
+  h1, h2, h3, .font-serif, .font-heading {
+    font-family: var(--font-heading);
+    letter-spacing: -0.015em;
+  }
+}
+
+/* ============================================================
+   Editorial Utility Classes & Aesthetic Elements
+   ============================================================ */
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .paper-grain {
+    background-image: radial-gradient(rgba(124, 119, 95, 0.07) 1px, transparent 0);
+    background-size: 24px 24px;
+  }
+
+  .editorial-lead {
+    font-size: 1.15rem;
+    line-height: 1.75;
+    color: var(--color-text-secondary);
+  }
+
+  .organic-card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--duration-normal) var(--ease-out), box-shadow var(--duration-normal) var(--ease-out), border-color var(--duration-normal) var(--ease-out);
+  }
+
+  .organic-card:hover {
+    border-color: var(--color-primary-muted);
+  }
+
+  .organic-image-mask {
+    border-radius: 2rem;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .organic-image-mask::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 2rem;
+    border: 1px solid rgba(218, 212, 200, 0.5);
+    pointer-events: none;
+  }
+
+  .zen-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 0.85rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    background-color: var(--color-primary-subtle);
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary-muted);
+  }
+
+  /* Accessible focus rings */
+  .focus-ring {
+    outline: none;
+  }
+  .focus-ring:focus-visible {
+    box-shadow: 0 0 0 2px var(--color-bg), 0 0 0 4px var(--color-primary);
+  }
+}
+
+/* ============================================================
+   Lenis Smooth Scrolling Support
+   ============================================================ */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* ============================================================
+   Reduced Motion Accessibility
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================================
+   Clinical Report PDF & Print Optimization
+   ============================================================ */
+@media print {
+  @page {
+    margin: 1.2cm;
+    size: auto;
+  }
+
+  body {
+    background-color: #FFFFFF !important;
+    color: #2F302B !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .print\:hidden {
+    display: none !important;
+  }
+
+  /* Prevent awkward page breaks inside cards */
+  .rounded-3xl,
+  .rounded-2xl {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    box-shadow: none !important;
+  }
+
+  /* Ensure SVG charts print crisply */
+  svg {
+    max-width: 100% !important;
+  }
+}

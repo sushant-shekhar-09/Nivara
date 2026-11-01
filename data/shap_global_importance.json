@@ -1,0 +1,522 @@
+{
+  "global_importance": {
+    "depression": [
+      {
+        "feature": "pss_score",
+        "mean_abs_shap": 0.0606
+      },
+      {
+        "feature": "PSS3",
+        "mean_abs_shap": 0.048
+      },
+      {
+        "feature": "PSS10",
+        "mean_abs_shap": 0.0421
+      },
+      {
+        "feature": "PSS4",
+        "mean_abs_shap": 0.0386
+      },
+      {
+        "feature": "PSS9",
+        "mean_abs_shap": 0.0381
+      },
+      {
+        "feature": "PSS1",
+        "mean_abs_shap": 0.0303
+      },
+      {
+        "feature": "PSS2",
+        "mean_abs_shap": 0.0203
+      },
+      {
+        "feature": "Academic_Year_Third Year or Equivalent",
+        "mean_abs_shap": 0.0088
+      },
+      {
+        "feature": "PSS6",
+        "mean_abs_shap": 0.007
+      },
+      {
+        "feature": "Academic_Year_First Year or Equivalent",
+        "mean_abs_shap": 0.0048
+      },
+      {
+        "feature": "PSS7",
+        "mean_abs_shap": 0.0033
+      },
+      {
+        "feature": "Current_CGPA_2.50 - 2.99",
+        "mean_abs_shap": 0.0029
+      },
+      {
+        "feature": "PSS5",
+        "mean_abs_shap": 0.0029
+      },
+      {
+        "feature": "University_Independent University, Bangladesh (IUB)",
+        "mean_abs_shap": 0.0027
+      },
+      {
+        "feature": "PSS8",
+        "mean_abs_shap": 0.0024
+      }
+    ],
+    "anxiety": [
+      {
+        "feature": "pss_score",
+        "mean_abs_shap": 0.0606
+      },
+      {
+        "feature": "PSS3",
+        "mean_abs_shap": 0.048
+      },
+      {
+        "feature": "PSS10",
+        "mean_abs_shap": 0.0421
+      },
+      {
+        "feature": "PSS4",
+        "mean_abs_shap": 0.0386
+      },
+      {
+        "feature": "PSS9",
+        "mean_abs_shap": 0.0381
+      },
+      {
+        "feature": "PSS1",
+        "mean_abs_shap": 0.0303
+      },
+      {
+        "feature": "PSS2",
+        "mean_abs_shap": 0.0203
+      },
+      {
+        "feature": "Academic_Year_Third Year or Equivalent",
+        "mean_abs_shap": 0.0088
+      },
+      {
+        "feature": "PSS6",
+        "mean_abs_shap": 0.007
+      },
+      {
+        "feature": "Academic_Year_First Year or Equivalent",
+        "mean_abs_shap": 0.0048
+      },
+      {
+        "feature": "PSS7",
+        "mean_abs_shap": 0.0033
+      },
+      {
+        "feature": "Current_CGPA_2.50 - 2.99",
+        "mean_abs_shap": 0.0029
+      },
+      {
+        "feature": "PSS5",
+        "mean_abs_shap": 0.0029
+      },
+      {
+        "feature": "University_Independent University, Bangladesh (IUB)",
+        "mean_abs_shap": 0.0027
+      },
+      {
+        "feature": "PSS8",
+        "mean_abs_shap": 0.0024
+      }
+    ]
+  },
+  "sample_instance_explanation": {
+    "target": "depression",
+    "estimated_probability": 0.8474,
+    "baseline_expected_value": 0.5153,
+    "top_contributing_factors": [
+      {
+        "feature": "pss_score",
+        "shap_value": 0.0922,
+        "direction": "increased_risk",
+        "non_causal_statement": "This factor contributed +0.092 to the model's estimated screening risk."
+      },
+      {
+        "feature": "PSS10",
+        "shap_value": 0.0701,
+        "direction": "increased_risk",
+        "non_causal_statement": "This factor contributed +0.070 to the model's estimated screening risk."
+      },
+      {
+        "feature": "PSS9",
+        "shap_value": 0.0587,
+        "direction": "increased_risk",
+        "non_causal_statement": "This factor contributed +0.059 to the model's estimated screening risk."
+      },
+      {
+        "feature": "PSS1",
+        "shap_value": 0.0386,
+        "direction": "increased_risk",
+        "non_causal_statement": "This factor contributed +0.039 to the model's estimated screening risk."
+      },
+      {
+        "feature": "PSS2",
+        "shap_value": 0.0349,
+        "direction": "increased_risk",
+        "non_causal_statement": "This factor contributed +0.035 to the model's estimated screening risk."
+      }
+    ],
+    "all_factors": [
+      {
+        "feature": "pss_score",
+        "shap_value": 0.0922,
+        "direction": "increased_risk",
+        "non_causal_statement": "This factor contributed +0.092 to the model's estimated screening risk."
+      },
+      {
+        "feature": "PSS10",
+        "shap_value": 0.0701,
+        "direction": "increased_risk",
+        "non_causal_statement": "This factor contributed +0.070 to the model's estimated screening risk."
+      },
+      {
+        "feature": "PSS9",
+        "shap_value": 0.0587,
+        "direction": "increased_risk",
+        "non_causal_statement": "This factor contributed +0.059 to the model's estimated screening risk."
+      },
+      {
+        "feature": "PSS1",
+        "shap_value": 0.0386,
+        "direction": "increased_risk",
+        "non_causal_statement": "This factor contributed +0.039 to the model's estimated screening risk."
+      },
+      {
+        "feature": "PSS2",
+        "shap_value": 0.0349,
+        "direction": "increased_risk",
+        "non_causal_statement": "This factor contributed +0.035 to the model's estimated screening risk."
+      },
+      {
+        "feature": "PSS4",
+        "shap_value": -0.0186,
+        "direction": "decreased_risk",
+        "non_causal_statement": "This factor contributed -0.019 toward lower estimated screening risk."
+      },
+      {
+        "feature": "PSS3",
+        "shap_value": 0.0157,
+        "direction": "increased_risk",
+        "non_causal_statement": "This factor contributed +0.016 to the model's estimated screening risk."
+      },
+      {
+        "feature": "PSS6",
+        "shap_value": 0.0111,
+        "direction": "increased_risk",
+        "non_causal_statement": "This factor contributed +0.011 to the model's estimated screening risk."
+      },
+      {
+        "feature": "University_Independent University, Bangladesh (IUB)",
+        "shap_value": 0.0066,
+        "direction": "increased_risk",
+        "non_causal_statement": "This factor contributed +0.007 to the model's estimated screening risk."
+      },
+      {
+        "feature": "Current_CGPA_2.50 - 2.99",
+        "shap_value": 0.0062,
+        "direction": "increased_risk",
+        "non_causal_statement": "This factor contributed +0.006 to the model's estimated screening risk."
+      },
+      {
+        "feature": "Academic_Year_Third Year or Equivalent",
+        "shap_value": -0.0047,
+        "direction": "decreased_risk",
+        "non_causal_statement": "This factor contributed -0.005 toward lower estimated screening risk."
+      },
+      {
+        "feature": "Academic_Year_First Year or Equivalent",
+        "shap_value": 0.0039,
+        "direction": "increased_risk",
+        "non_causal_statement": "This factor contributed +0.004 to the model's estimated screening risk."
+      },
+      {
+        "feature": "Gender_Female",
+        "shap_value": 0.0038,
+        "direction": "increased_risk",
+        "non_causal_statement": "This factor contributed +0.004 to the model's estimated screening risk."
+      },
+      {
+        "feature": "PSS5",
+        "shap_value": 0.0024,
+        "direction": "increased_risk",
+        "non_causal_statement": "This factor contributed +0.002 to the model's estimated screening risk."
+      },
+      {
+        "feature": "Gender_Male",
+        "shap_value": 0.0023,
+        "direction": "increased_risk",
+        "non_causal_statement": "This factor contributed +0.002 to the model's estimated screening risk."
+      },
+      {
+        "feature": "PSS7",
+        "shap_value": 0.0022,
+        "direction": "increased_risk",
+        "non_causal_statement": "This factor contributed +0.002 to the model's estimated screening risk."
+      },
+      {
+        "feature": "Academic_Year_Second Year or Equivalent",
+        "shap_value": 0.0018,
+        "direction": "increased_risk",
+        "non_causal_statement": "This factor contributed +0.002 to the model's estimated screening risk."
+      },
+      {
+        "feature": "Current_CGPA_3.00 - 3.39",
+        "shap_value": 0.0013,
+        "direction": "increased_risk",
+        "non_causal_statement": "This factor contributed +0.001 to the model's estimated screening risk."
+      },
+      {
+        "feature": "Current_CGPA_3.80 - 4.00",
+        "shap_value": 0.0012,
+        "direction": "increased_risk",
+        "non_causal_statement": "This factor contributed +0.001 to the model's estimated screening risk."
+      },
+      {
+        "feature": "PSS8",
+        "shap_value": 0.0011,
+        "direction": "increased_risk",
+        "non_causal_statement": "This factor contributed +0.001 to the model's estimated screening risk."
+      },
+      {
+        "feature": "University_Dhaka University of Engineering and Technology (DUET)",
+        "shap_value": 0.0009,
+        "direction": "increased_risk",
+        "non_causal_statement": "This factor contributed +0.001 to the model's estimated screening risk."
+      },
+      {
+        "feature": "waiver_or_scholarship_No",
+        "shap_value": -0.0009,
+        "direction": "decreased_risk",
+        "non_causal_statement": "This factor contributed -0.001 toward lower estimated screening risk."
+      },
+      {
+        "feature": "Academic_Year_Fourth Year or Equivalent",
+        "shap_value": 0.0007,
+        "direction": "increased_risk",
+        "non_causal_statement": "This factor contributed +0.001 to the model's estimated screening risk."
+      },
+      {
+        "feature": "University_Islamic University of Technology (IUT)",
+        "shap_value": -0.0006,
+        "direction": "decreased_risk",
+        "non_causal_statement": "This factor contributed -0.001 toward lower estimated screening risk."
+      },
+      {
+        "feature": "University_American International University Bangladesh (AIUB)",
+        "shap_value": 0.0005,
+        "direction": "increased_risk",
+        "non_causal_statement": "This factor contributed +0.000 to the model's estimated screening risk."
+      },
+      {
+        "feature": "University_Dhaka University (DU)",
+        "shap_value": 0.0005,
+        "direction": "increased_risk",
+        "non_causal_statement": "This factor contributed +0.000 to the model's estimated screening risk."
+      },
+      {
+        "feature": "Academic_Year_Other",
+        "shap_value": 0.0005,
+        "direction": "increased_risk",
+        "non_causal_statement": "This factor contributed +0.001 to the model's estimated screening risk."
+      },
+      {
+        "feature": "Age_18-22",
+        "shap_value": 0.0004,
+        "direction": "increased_risk",
+        "non_causal_statement": "This factor contributed +0.000 to the model's estimated screening risk."
+      },
+      {
+        "feature": "Department_Engineering - CS / CSE / CSC / Similar to CS",
+        "shap_value": -0.0003,
+        "direction": "decreased_risk",
+        "non_causal_statement": "This factor contributed -0.000 toward lower estimated screening risk."
+      },
+      {
+        "feature": "waiver_or_scholarship_Yes",
+        "shap_value": -0.0003,
+        "direction": "decreased_risk",
+        "non_causal_statement": "This factor contributed -0.000 toward lower estimated screening risk."
+      },
+      {
+        "feature": "Age_23-26",
+        "shap_value": 0.0002,
+        "direction": "increased_risk",
+        "non_causal_statement": "This factor contributed +0.000 to the model's estimated screening risk."
+      },
+      {
+        "feature": "University_Bangladesh University of Engineering and Technology (BUET)",
+        "shap_value": 0.0002,
+        "direction": "increased_risk",
+        "non_causal_statement": "This factor contributed +0.000 to the model's estimated screening risk."
+      },
+      {
+        "feature": "University_East West University (EWU)",
+        "shap_value": -0.0002,
+        "direction": "decreased_risk",
+        "non_causal_statement": "This factor contributed -0.000 toward lower estimated screening risk."
+      },
+      {
+        "feature": "University_North South University (NSU)",
+        "shap_value": -0.0002,
+        "direction": "decreased_risk",
+        "non_causal_statement": "This factor contributed -0.000 toward lower estimated screening risk."
+      },
+      {
+        "feature": "Department_Business and Entrepreneurship Studies",
+        "shap_value": 0.0002,
+        "direction": "increased_risk",
+        "non_causal_statement": "This factor contributed +0.000 to the model's estimated screening risk."
+      },
+      {
+        "feature": "Department_Engineering - EEE/ ECE / Similar to EEE",
+        "shap_value": -0.0002,
+        "direction": "decreased_risk",
+        "non_causal_statement": "This factor contributed -0.000 toward lower estimated screening risk."
+      },
+      {
+        "feature": "Current_CGPA_3.40 - 3.79",
+        "shap_value": -0.0002,
+        "direction": "decreased_risk",
+        "non_causal_statement": "This factor contributed -0.000 toward lower estimated screening risk."
+      },
+      {
+        "feature": "Current_CGPA_Below 2.50",
+        "shap_value": -0.0002,
+        "direction": "decreased_risk",
+        "non_causal_statement": "This factor contributed -0.000 toward lower estimated screening risk."
+      },
+      {
+        "feature": "Current_CGPA_Other",
+        "shap_value": 0.0002,
+        "direction": "increased_risk",
+        "non_causal_statement": "This factor contributed +0.000 to the model's estimated screening risk."
+      },
+      {
+        "feature": "University_Patuakhali Science and Technology University",
+        "shap_value": 0.0001,
+        "direction": "increased_risk",
+        "non_causal_statement": "This factor contributed +0.000 to the model's estimated screening risk."
+      },
+      {
+        "feature": "University_Rajshahi University of Engineering and Technology (RUET)",
+        "shap_value": -0.0001,
+        "direction": "decreased_risk",
+        "non_causal_statement": "This factor contributed -0.000 toward lower estimated screening risk."
+      },
+      {
+        "feature": "Department_Biological Sciences",
+        "shap_value": 0.0001,
+        "direction": "increased_risk",
+        "non_causal_statement": "This factor contributed +0.000 to the model's estimated screening risk."
+      },
+      {
+        "feature": "Department_Environmental and Life Sciences",
+        "shap_value": 0.0001,
+        "direction": "increased_risk",
+        "non_causal_statement": "This factor contributed +0.000 to the model's estimated screening risk."
+      },
+      {
+        "feature": "Age_27-30",
+        "shap_value": 0.0,
+        "direction": "increased_risk",
+        "non_causal_statement": "This factor contributed +0.000 to the model's estimated screening risk."
+      },
+      {
+        "feature": "Age_Above 30",
+        "shap_value": 0.0,
+        "direction": "decreased_risk",
+        "non_causal_statement": "This factor contributed -0.000 toward lower estimated screening risk."
+      },
+      {
+        "feature": "Age_Below 18",
+        "shap_value": 0.0,
+        "direction": "decreased_risk",
+        "non_causal_statement": "This factor contributed -0.000 toward lower estimated screening risk."
+      },
+      {
+        "feature": "Gender_Prefer not to say",
+        "shap_value": -0.0,
+        "direction": "decreased_risk",
+        "non_causal_statement": "This factor contributed -0.000 toward lower estimated screening risk."
+      },
+      {
+        "feature": "University_BRAC University",
+        "shap_value": 0.0,
+        "direction": "decreased_risk",
+        "non_causal_statement": "This factor contributed -0.000 toward lower estimated screening risk."
+      },
+      {
+        "feature": "University_Bangladesh Agricultural University (BAU)",
+        "shap_value": 0.0,
+        "direction": "decreased_risk",
+        "non_causal_statement": "This factor contributed -0.000 toward lower estimated screening risk."
+      },
+      {
+        "feature": "University_Daffodil University",
+        "shap_value": 0.0,
+        "direction": "decreased_risk",
+        "non_causal_statement": "This factor contributed -0.000 toward lower estimated screening risk."
+      },
+      {
+        "feature": "University_Rajshahi University (RU)",
+        "shap_value": 0.0,
+        "direction": "increased_risk",
+        "non_causal_statement": "This factor contributed +0.000 to the model's estimated screening risk."
+      },
+      {
+        "feature": "University_United International University (UIU)",
+        "shap_value": 0.0,
+        "direction": "increased_risk",
+        "non_causal_statement": "This factor contributed +0.000 to the model's estimated screening risk."
+      },
+      {
+        "feature": "Department_Engineering - Civil Engineering / Similar to CE",
+        "shap_value": -0.0,
+        "direction": "decreased_risk",
+        "non_causal_statement": "This factor contributed -0.000 toward lower estimated screening risk."
+      },
+      {
+        "feature": "Department_Engineering - Mechanical Engineering / Similar to ME",
+        "shap_value": 0.0,
+        "direction": "increased_risk",
+        "non_causal_statement": "This factor contributed +0.000 to the model's estimated screening risk."
+      },
+      {
+        "feature": "Department_Engineering - Other",
+        "shap_value": 0.0,
+        "direction": "decreased_risk",
+        "non_causal_statement": "This factor contributed -0.000 toward lower estimated screening risk."
+      },
+      {
+        "feature": "Department_Law and Human Rights",
+        "shap_value": 0.0,
+        "direction": "decreased_risk",
+        "non_causal_statement": "This factor contributed -0.000 toward lower estimated screening risk."
+      },
+      {
+        "feature": "Department_Liberal Arts and Social Sciences",
+        "shap_value": 0.0,
+        "direction": "decreased_risk",
+        "non_causal_statement": "This factor contributed -0.000 toward lower estimated screening risk."
+      },
+      {
+        "feature": "Department_Other",
+        "shap_value": 0.0,
+        "direction": "increased_risk",
+        "non_causal_statement": "This factor contributed +0.000 to the model's estimated screening risk."
+      },
+      {
+        "feature": "Department_Pharmacy and Public Health",
+        "shap_value": 0.0,
+        "direction": "decreased_risk",
+        "non_causal_statement": "This factor contributed -0.000 toward lower estimated screening risk."
+      }
+    ],
+    "disclaimer": "IMPORTANT: Feature attributions indicate mathematical contribution to this model's statistical screening estimate only. They DO NOT establish medical causation, clinical diagnosis, or psychological root causes."
+  }
+}

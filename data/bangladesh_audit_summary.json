@@ -1,0 +1,242 @@
+{
+  "dataset_filename": "Processed.csv",
+  "n_raw_rows": 2028,
+  "n_raw_cols": 39,
+  "total_missing_values": 0,
+  "exact_duplicate_rows": 6,
+  "duplicate_row_indices": [
+    492,
+    533,
+    763,
+    1120,
+    1362,
+    1369
+  ],
+  "n_dedup_rows": 2022,
+  "feature_duplicate_rows": 1186,
+  "score_reconstruction": {
+    "gad7": {
+      "exact_matches": 2028,
+      "mismatches": 0,
+      "pct_match": 100.0
+    },
+    "phq9": {
+      "exact_matches": 2028,
+      "mismatches": 0,
+      "pct_match": 100.0
+    },
+    "pss10_rev5678": {
+      "exact_matches": 2028,
+      "mismatches": 0,
+      "pct_match": 100.0
+    }
+  },
+  "target_distributions": {
+    "raw": {
+      "depression_elevated": {
+        "pos": 1473,
+        "neg": 555,
+        "prevalence_pct": 72.63
+      },
+      "anxiety_elevated": {
+        "pos": 1364,
+        "neg": 664,
+        "prevalence_pct": 67.26
+      }
+    },
+    "deduplicated": {
+      "depression_elevated": {
+        "pos": 1470,
+        "neg": 552,
+        "prevalence_pct": 72.7
+      },
+      "anxiety_elevated": {
+        "pos": 1361,
+        "neg": 661,
+        "prevalence_pct": 67.31
+      }
+    }
+  },
+  "safety_audit": {
+    "phq9_item9_distribution": {
+      "0": 775,
+      "1": 519,
+      "3": 399,
+      "2": 335
+    },
+    "phq9_item9_elevated_count": 1253,
+    "phq9_item9_elevated_pct": 61.79
+  },
+  "universities": {
+    "n_unique": 15,
+    "details": {
+      "Independent University, Bangladesh (IUB)": {
+        "n": 530,
+        "pct_of_cohort": 26.21,
+        "dep_pos": 396,
+        "dep_prevalence_pct": 74.72,
+        "anx_pos": 378,
+        "anx_prevalence_pct": 71.32
+      },
+      "American International University Bangladesh (AIUB)": {
+        "n": 503,
+        "pct_of_cohort": 24.88,
+        "dep_pos": 335,
+        "dep_prevalence_pct": 66.6,
+        "anx_pos": 298,
+        "anx_prevalence_pct": 59.24
+      },
+      "Islamic University of Technology (IUT)": {
+        "n": 269,
+        "pct_of_cohort": 13.3,
+        "dep_pos": 233,
+        "dep_prevalence_pct": 86.62,
+        "anx_pos": 222,
+        "anx_prevalence_pct": 82.53
+      },
+      "Dhaka University (DU)": {
+        "n": 200,
+        "pct_of_cohort": 9.89,
+        "dep_pos": 142,
+        "dep_prevalence_pct": 71.0,
+        "anx_pos": 136,
+        "anx_prevalence_pct": 68.0
+      },
+      "Dhaka University of Engineering and Technology (DUET)": {
+        "n": 162,
+        "pct_of_cohort": 8.01,
+        "dep_pos": 107,
+        "dep_prevalence_pct": 66.05,
+        "anx_pos": 86,
+        "anx_prevalence_pct": 53.09
+      },
+      "North South University (NSU)": {
+        "n": 87,
+        "pct_of_cohort": 4.3,
+        "dep_pos": 65,
+        "dep_prevalence_pct": 74.71,
+        "anx_pos": 66,
+        "anx_prevalence_pct": 75.86
+      },
+      "Bangladesh University of Engineering and Technology (BUET)": {
+        "n": 63,
+        "pct_of_cohort": 3.12,
+        "dep_pos": 36,
+        "dep_prevalence_pct": 57.14,
+        "anx_pos": 31,
+        "anx_prevalence_pct": 49.21
+      },
+      "Patuakhali Science and Technology University": {
+        "n": 50,
+        "pct_of_cohort": 2.47,
+        "dep_pos": 34,
+        "dep_prevalence_pct": 68.0,
+        "anx_pos": 29,
+        "anx_prevalence_pct": 58.0
+      },
+      "East West University (EWU)": {
+        "n": 42,
+        "pct_of_cohort": 2.08,
+        "dep_pos": 39,
+        "dep_prevalence_pct": 92.86,
+        "anx_pos": 34,
+        "anx_prevalence_pct": 80.95
+      },
+      "Rajshahi University of Engineering and Technology (RUET)": {
+        "n": 31,
+        "pct_of_cohort": 1.53,
+        "dep_pos": 21,
+        "dep_prevalence_pct": 67.74,
+        "anx_pos": 23,
+        "anx_prevalence_pct": 74.19
+      },
+      "Rajshahi University (RU)": {
+        "n": 23,
+        "pct_of_cohort": 1.14,
+        "dep_pos": 16,
+        "dep_prevalence_pct": 69.57,
+        "anx_pos": 14,
+        "anx_prevalence_pct": 60.87
+      },
+      "BRAC University": {
+        "n": 19,
+        "pct_of_cohort": 0.94,
+        "dep_pos": 15,
+        "dep_prevalence_pct": 78.95,
+        "anx_pos": 13,
+        "anx_prevalence_pct": 68.42
+      },
+      "United International University (UIU)": {
+        "n": 18,
+        "pct_of_cohort": 0.89,
+        "dep_pos": 14,
+        "dep_prevalence_pct": 77.78,
+        "anx_pos": 14,
+        "anx_prevalence_pct": 77.78
+      },
+      "Bangladesh Agricultural University (BAU)": {
+        "n": 14,
+        "pct_of_cohort": 0.69,
+        "dep_pos": 8,
+        "dep_prevalence_pct": 57.14,
+        "anx_pos": 7,
+        "anx_prevalence_pct": 50.0
+      },
+      "Daffodil University": {
+        "n": 11,
+        "pct_of_cohort": 0.54,
+        "dep_pos": 9,
+        "dep_prevalence_pct": 81.82,
+        "anx_pos": 10,
+        "anx_prevalence_pct": 90.91
+      }
+    }
+  },
+  "demographics": {
+    "age": {
+      "18-22": 1304,
+      "23-26": 692,
+      "27-30": 25,
+      "Below 18": 4,
+      "Above 30": 3
+    },
+    "gender": {
+      "Male": 1405,
+      "Female": 613,
+      "Prefer not to say": 10
+    },
+    "academic_year": {
+      "First Year or Equivalent": 601,
+      "Third Year or Equivalent": 570,
+      "Fourth Year or Equivalent": 403,
+      "Second Year or Equivalent": 382,
+      "Other": 72
+    },
+    "cgpa": {
+      "3.00 - 3.39": 583,
+      "3.40 - 3.79": 560,
+      "2.50 - 2.99": 389,
+      "3.80 - 4.00": 241,
+      "Other": 171,
+      "Below 2.50": 84
+    },
+    "waiver": {
+      "No": 1602,
+      "Yes": 426
+    },
+    "department": {
+      "Engineering - CS / CSE / CSC / Similar to CS": 1409,
+      "Business and Entrepreneurship Studies": 145,
+      "Engineering - EEE/ ECE / Similar to EEE": 127,
+      "Biological Sciences": 95,
+      "Other": 79,
+      "Engineering - Mechanical Engineering / Similar to ME": 68,
+      "Engineering - Civil Engineering / Similar to CE": 50,
+      "Environmental and Life Sciences": 47,
+      "Engineering - Other": 4,
+      "Pharmacy and Public Health": 2,
+      "Liberal Arts and Social Sciences": 1,
+      "Law and Human Rights": 1
+    }
+  }
+}

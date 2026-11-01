@@ -1,0 +1,97 @@
+{
+  "cross_national_synthesis": {
+    "bangladesh_primary": {
+      "cohort": "Bangladesh University Students",
+      "sample_size": 2022,
+      "depression_elevated_pct": 72.7,
+      "anxiety_elevated_pct": 67.31,
+      "comorbid_pct": 60.88
+    },
+    "china_secondary": {
+      "cohort": "Xinxiang Medical University (China)",
+      "sample_size": 24292,
+      "depression_elevated_pct": 5.42,
+      "anxiety_elevated_pct": 2.25,
+      "comorbid_pct": 1.7,
+      "pss_vs_phq_r": 0.5031,
+      "pss_vs_gad_r": 0.4936
+    },
+    "uk_secondary": {
+      "cohort": "UK Higher-Education Students",
+      "sample_size": 1408,
+      "depression_elevated_pct": 47.09,
+      "anxiety_elevated_pct": 43.82,
+      "comorbid_pct": 36.15,
+      "pss_vs_phq_r": 0.75,
+      "pss_vs_gad_r": 0.7386
+    }
+  },
+  "xinxiang_detailed": {
+    "n_samples": 24292,
+    "demographics": {
+      "female_pct": 63.99,
+      "male_pct": 36.01,
+      "mean_age": 20.66,
+      "age_std": 2.41
+    },
+    "prevalence": {
+      "elevated_depression_pct": 5.42,
+      "elevated_depression_count": 1316,
+      "elevated_anxiety_pct": 2.25,
+      "elevated_anxiety_count": 546,
+      "comorbid_pct": 1.7,
+      "comorbid_count": 414
+    },
+    "psychometric_scores": {
+      "phq_mean": 3.27,
+      "phq_std": 3.71,
+      "gad_mean": 1.91,
+      "gad_std": 2.92,
+      "pss_mean": 19.99,
+      "pss_std": 8.32,
+      "isi_mean": 2.78,
+      "isi_std": 3.44
+    },
+    "correlations_pearson": {
+      "pss_vs_phq": 0.5031,
+      "pss_vs_gad": 0.4936,
+      "phq_vs_gad": 0.7662,
+      "isi_vs_phq": 0.6473,
+      "isi_vs_gad": 0.6019
+    },
+    "response_time_analytics": {
+      "phq9_median_total_sec": 33.72,
+      "phq9_mean_total_sec": 42.57,
+      "gad7_median_total_sec": 20.04,
+      "gad7_mean_total_sec": 26.0,
+      "rapid_responders_phq_sub10s": 491,
+      "rapid_responders_phq_pct": 2.02,
+      "rapid_responders_gad_sub7s": 1163,
+      "rapid_responders_gad_pct": 4.79
+    }
+  },
+  "uk_detailed": {
+    "n_samples": 1408,
+    "prevalence": {
+      "elevated_depression_pct": 47.09,
+      "elevated_depression_count": 663,
+      "elevated_anxiety_pct": 43.82,
+      "elevated_anxiety_count": 617,
+      "comorbid_pct": 36.15,
+      "comorbid_count": 509
+    },
+    "psychometric_scores": {
+      "phq_mean": 10.16,
+      "phq_std": 6.73,
+      "gad_mean": 9.25,
+      "gad_std": 6.09,
+      "pss_mean": 20.88,
+      "pss_std": 7.21
+    },
+    "correlations_pearson": {
+      "pss_vs_phq": 0.75,
+      "pss_vs_gad": 0.7386,
+      "phq_vs_gad": 0.7747
+    }
+  }
+}

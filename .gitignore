@@ -1,0 +1,133 @@
+# ==============================================================================
+# NIVARA — Root Git Ignore Configuration
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# Byte-compiled / optimized / DLL files (Python)
+# ------------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# ------------------------------------------------------------------------------
+# Distribution / packaging / build artifacts
+# ------------------------------------------------------------------------------
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+/lib/
+/lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ------------------------------------------------------------------------------
+# Virtual environments
+# ------------------------------------------------------------------------------
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# ------------------------------------------------------------------------------
+# Testing, coverage & profiling
+# ------------------------------------------------------------------------------
+.cache
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.hypothesis/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# ------------------------------------------------------------------------------
+# Node.js & Frontend dependencies / build outputs
+# ------------------------------------------------------------------------------
+node_modules/
+**/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+frontend/dist/
+dist-ssr/
+*.tsbuildinfo
+.vite/
+
+# ------------------------------------------------------------------------------
+# Local databases, binaries & runtime artifacts
+# ------------------------------------------------------------------------------
+*.db
+*.sqlite
+*.sqlite3
+test_nivara.db
+pgsql_16/
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+
+# ------------------------------------------------------------------------------
+# Marketing / Media transient rendering outputs
+# ------------------------------------------------------------------------------
+brag-output/
+marketing/**/node_modules/
+marketing/**/dist/
+marketing/**/output/
+marketing/**/renders/
+marketing/**/v1_backup/
+
+# ------------------------------------------------------------------------------
+# Environment variables and secrets
+# ------------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.cert
+*.crt
+
+# ------------------------------------------------------------------------------
+# IDE, Editors & OS Files
+# ------------------------------------------------------------------------------
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# ------------------------------------------------------------------------------
+# Explicit Preserves (Crucial Source, Data & Artifacts)
+# ------------------------------------------------------------------------------
+!frontend/src/lib/
+!frontend/src/lib/**
+!artifacts/
+!artifacts/**
+!data/
+!data/raw/
+!data/raw/**
+!data/dataset_manifest.json
+!data/dataset_manifest.yaml
+!data/ml_benchmark_results.json

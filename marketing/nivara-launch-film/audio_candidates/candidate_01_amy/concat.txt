@@ -1,0 +1,8 @@
+file 'D:/Projects/Mental Health Assistance ML-Project/marketing/nivara-launch-film/audio_candidates/candidate_01_amy/line_00_pad.wav'
+file 'D:/Projects/Mental Health Assistance ML-Project/marketing/nivara-launch-film/audio_candidates/candidate_01_amy/line_01_pad.wav'
+file 'D:/Projects/Mental Health Assistance ML-Project/marketing/nivara-launch-film/audio_candidates/candidate_01_amy/line_02_pad.wav'
+file 'D:/Projects/Mental Health Assistance ML-Project/marketing/nivara-launch-film/audio_candidates/candidate_01_amy/line_03_pad.wav'
+file 'D:/Projects/Mental Health Assistance ML-Project/marketing/nivara-launch-film/audio_candidates/candidate_01_amy/line_04_pad.wav'
+file 'D:/Projects/Mental Health Assistance ML-Project/marketing/nivara-launch-film/audio_candidates/candidate_01_amy/line_05_pad.wav'
+file 'D:/Projects/Mental Health Assistance ML-Project/marketing/nivara-launch-film/audio_candidates/candidate_01_amy/line_06_pad.wav'
+file 'D:/Projects/Mental Health Assistance ML-Project/marketing/nivara-launch-film/audio_candidates/candidate_01_amy/line_07_pad.wav'

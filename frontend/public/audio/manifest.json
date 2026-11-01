@@ -1,0 +1,197 @@
+{
+  "engine": "Kyutai PocketTTS",
+  "version": "4.0.1",
+  "voice": "alba",
+  "language": "english",
+  "sample_rate": 24000,
+  "questions": {
+    "pss10": {
+      "1": {
+        "file": "pss10_1.wav",
+        "url": "/audio/questions/pss10_1.wav",
+        "text": "In a semester, how often have you felt upset due to something that happened in your academic affairs? Options are: Never, Almost Never, Sometimes, Fairly Often, or Very Often.",
+        "size_bytes": 497324
+      },
+      "2": {
+        "file": "pss10_2.wav",
+        "url": "/audio/questions/pss10_2.wav",
+        "text": "In a semester, how often you felt as if you were unable to control important things in your academic affairs? Options are: Never, Almost Never, Sometimes, Fairly Often, or Very Often.",
+        "size_bytes": 547244
+      },
+      "3": {
+        "file": "pss10_3.wav",
+        "url": "/audio/questions/pss10_3.wav",
+        "text": "In a semester, how often you felt nervous and stressed because of academic pressure? Options are: Never, Almost Never, Sometimes, Fairly Often, or Very Often.",
+        "size_bytes": 493484
+      },
+      "4": {
+        "file": "pss10_4.wav",
+        "url": "/audio/questions/pss10_4.wav",
+        "text": "In a semester, how often you felt as if you could not cope with all the mandatory academic activities? Options are: Never, Almost Never, Sometimes, Fairly Often, or Very Often.",
+        "size_bytes": 547244
+      },
+      "5": {
+        "file": "pss10_5.wav",
+        "url": "/audio/questions/pss10_5.wav",
+        "text": "In a semester, how often you felt confident about your ability to handle your academic or university problems? Options are: Never, Almost Never, Sometimes, Fairly Often, or Very Often.",
+        "size_bytes": 554924
+      },
+      "6": {
+        "file": "pss10_6.wav",
+        "url": "/audio/questions/pss10_6.wav",
+        "text": "In a semester, how often you felt as if things in your academic life is going on your way? Options are: Never, Almost Never, Sometimes, Fairly Often, or Very Often.",
+        "size_bytes": 501164
+      },
+      "7": {
+        "file": "pss10_7.wav",
+        "url": "/audio/questions/pss10_7.wav",
+        "text": "In a semester, how often are you able to control irritations in your academic or university affairs? Options are: Never, Almost Never, Sometimes, Fairly Often, or Very Often.",
+        "size_bytes": 520364
+      },
+      "8": {
+        "file": "pss10_8.wav",
+        "url": "/audio/questions/pss10_8.wav",
+        "text": "In a semester, how often you felt as if your academic performance was on top? Options are: Never, Almost Never, Sometimes, Fairly Often, or Very Often.",
+        "size_bytes": 458924
+      },
+      "9": {
+        "file": "pss10_9.wav",
+        "url": "/audio/questions/pss10_9.wav",
+        "text": "In a semester, how often you got angered due to bad performance or low grades that is beyond your control? Options are: Never, Almost Never, Sometimes, Fairly Often, or Very Often.",
+        "size_bytes": 528044
+      },
+      "10": {
+        "file": "pss10_10.wav",
+        "url": "/audio/questions/pss10_10.wav",
+        "text": "In a semester, how often you felt as if academic difficulties are piling up so high that you could not overcome them? Options are: Never, Almost Never, Sometimes, Fairly Often, or Very Often.",
+        "size_bytes": 593324
+      }
+    },
+    "phq9": {
+      "1": {
+        "file": "phq9_1.wav",
+        "url": "/audio/questions/phq9_1.wav",
+        "text": "Over the last two weeks, how often have you been bothered by: Little interest or pleasure in doing things? Options are: Not at all, Several days, More than half the days, or Nearly every day.",
+        "size_bytes": 528044
+      },
+      "2": {
+        "file": "phq9_2.wav",
+        "url": "/audio/questions/phq9_2.wav",
+        "text": "Over the last two weeks, how often have you been bothered by: Feeling down, depressed, or hopeless? Options are: Not at all, Several days, More than half the days, or Nearly every day.",
+        "size_bytes": 531884
+      },
+      "3": {
+        "file": "phq9_3.wav",
+        "url": "/audio/questions/phq9_3.wav",
+        "text": "Over the last two weeks, how often have you been bothered by: Trouble falling or staying asleep, or sleeping too much? Options are: Not at all, Several days, More than half the days, or Nearly every day.",
+        "size_bytes": 539564
+      },
+      "4": {
+        "file": "phq9_4.wav",
+        "url": "/audio/questions/phq9_4.wav",
+        "text": "Over the last two weeks, how often have you been bothered by: Feeling tired or having little energy? Options are: Not at all, Several days, More than half the days, or Nearly every day.",
+        "size_bytes": 505004
+      },
+      "5": {
+        "file": "phq9_5.wav",
+        "url": "/audio/questions/phq9_5.wav",
+        "text": "Over the last two weeks, how often have you been bothered by: Poor appetite or overeating? Options are: Not at all, Several days, More than half the days, or Nearly every day.",
+        "size_bytes": 481964
+      },
+      "6": {
+        "file": "phq9_6.wav",
+        "url": "/audio/questions/phq9_6.wav",
+        "text": "Over the last two weeks, how often have you been bothered by: Feeling bad about yourself, or that you are a failure or have let yourself or your family down? Options are: Not at all, Several days, More than half the days, or Nearly every day.",
+        "size_bytes": 658604
+      },
+      "7": {
+        "file": "phq9_7.wav",
+        "url": "/audio/questions/phq9_7.wav",
+        "text": "Over the last two weeks, how often have you been bothered by: Trouble concentrating on things, such as reading books or coursework? Options are: Not at all, Several days, More than half the days, or Nearly every day.",
+        "size_bytes": 604844
+      },
+      "8": {
+        "file": "phq9_8.wav",
+        "url": "/audio/questions/phq9_8.wav",
+        "text": "Over the last two weeks, how often have you been bothered by: Moving or speaking so slowly that other people noticed, or being fidgety or restless? Options are: Not at all, Several days, More than half the days, or Nearly every day.",
+        "size_bytes": 647084
+      },
+      "9": {
+        "file": "phq9_9.wav",
+        "url": "/audio/questions/phq9_9.wav",
+        "text": "Over the last two weeks, how often have you been bothered by: Thoughts that you would be better off dead, or of hurting yourself in some way? Options are: Not at all, Several days, More than half the days, or Nearly every day.",
+        "size_bytes": 554924
+      }
+    },
+    "gad7": {
+      "1": {
+        "file": "gad7_1.wav",
+        "url": "/audio/questions/gad7_1.wav",
+        "text": "Over the last two weeks, how often have you been bothered by: Feeling nervous, anxious, or on edge due to academic pressure? Options are: Not at all, Several days, More than half the days, or Nearly every day.",
+        "size_bytes": 620204
+      },
+      "2": {
+        "file": "gad7_2.wav",
+        "url": "/audio/questions/gad7_2.wav",
+        "text": "Over the last two weeks, how often have you been bothered by: Not being able to stop or control worrying about academic affairs? Options are: Not at all, Several days, More than half the days, or Nearly every day.",
+        "size_bytes": 616364
+      },
+      "3": {
+        "file": "gad7_3.wav",
+        "url": "/audio/questions/gad7_3.wav",
+        "text": "Over the last two weeks, how often have you been bothered by: Worrying too much about different university matters? Options are: Not at all, Several days, More than half the days, or Nearly every day.",
+        "size_bytes": 543404
+      },
+      "4": {
+        "file": "gad7_4.wav",
+        "url": "/audio/questions/gad7_4.wav",
+        "text": "Over the last two weeks, how often have you been bothered by: Trouble relaxing due to academic demands? Options are: Not at all, Several days, More than half the days, or Nearly every day.",
+        "size_bytes": 520364
+      },
+      "5": {
+        "file": "gad7_5.wav",
+        "url": "/audio/questions/gad7_5.wav",
+        "text": "Over the last two weeks, how often have you been bothered by: Being so restless that it is hard to sit still? Options are: Not at all, Several days, More than half the days, or Nearly every day.",
+        "size_bytes": 512684
+      },
+      "6": {
+        "file": "gad7_6.wav",
+        "url": "/audio/questions/gad7_6.wav",
+        "text": "Over the last two weeks, how often have you been bothered by: Becoming easily annoyed or irritable because of academic pressure? Options are: Not at all, Several days, More than half the days, or Nearly every day.",
+        "size_bytes": 577964
+      },
+      "7": {
+        "file": "gad7_7.wav",
+        "url": "/audio/questions/gad7_7.wav",
+        "text": "Over the last two weeks, how often have you been bothered by: Feeling afraid, as if something awful might happen? Options are: Not at all, Several days, More than half the days, or Nearly every day.",
+        "size_bytes": 558764
+      }
+    }
+  },
+  "prompts": {
+    "intro": {
+      "file": "prompt_intro.wav",
+      "url": "/audio/prompts/prompt_intro.wav",
+      "text": "Welcome to the Nivara Voice Screening assessment. Each question will be read aloud with allowed options. You can speak your answer anytime.",
+      "size_bytes": 324524
+    },
+    "confirm": {
+      "file": "prompt_confirm.wav",
+      "url": "/audio/prompts/prompt_confirm.wav",
+      "text": "Please confirm your answer to proceed to the next question.",
+      "size_bytes": 140204
+    },
+    "clarify": {
+      "file": "prompt_clarify.wav",
+      "url": "/audio/prompts/prompt_clarify.wav",
+      "text": "Response was unclear. Please select or speak one of the allowed options.",
+      "size_bytes": 232364
+    },
+    "completed": {
+      "file": "prompt_completed.wav",
+      "url": "/audio/prompts/prompt_completed.wav",
+      "text": "Screening completed. Thank you. Calculating results.",
+      "size_bytes": 151724
+    }
+  }
+}

@@ -1,0 +1,387 @@
+{
+  "n_samples": 2022,
+  "targets": {
+    "depression_elevated": {
+      "n": 1470,
+      "pct": 72.7
+    },
+    "anxiety_elevated": {
+      "n": 1361,
+      "pct": 67.31
+    },
+    "comorbidity": {
+      "both_elevated": {
+        "n": 1231,
+        "pct": 60.88
+      },
+      "depression_only": {
+        "n": 239,
+        "pct": 11.82
+      },
+      "anxiety_only": {
+        "n": 130,
+        "pct": 6.43
+      },
+      "neither": {
+        "n": 422,
+        "pct": 20.87
+      },
+      "cramers_v_between_targets": 0.5716
+    }
+  },
+  "institutional_heterogeneity": {
+    "depression_chi2": 60.957,
+    "depression_p": 7.97e-08,
+    "anxiety_chi2": 86.491,
+    "anxiety_p": 1.74e-12
+  },
+  "categorical_associations": {
+    "Age": {
+      "unique_categories": 5,
+      "depression": {
+        "chi2": 7.217,
+        "p_value": 0.125,
+        "cramers_v": 0.0399,
+        "significant_005": false
+      },
+      "anxiety": {
+        "chi2": 9.132,
+        "p_value": 0.0579,
+        "cramers_v": 0.0504,
+        "significant_005": false
+      }
+    },
+    "Gender": {
+      "unique_categories": 3,
+      "depression": {
+        "chi2": 11.875,
+        "p_value": 0.00264,
+        "cramers_v": 0.0699,
+        "significant_005": true
+      },
+      "anxiety": {
+        "chi2": 15.475,
+        "p_value": 0.000436,
+        "cramers_v": 0.0817,
+        "significant_005": true
+      }
+    },
+    "University": {
+      "unique_categories": 15,
+      "depression": {
+        "chi2": 60.957,
+        "p_value": 7.97e-08,
+        "cramers_v": 0.1524,
+        "significant_005": true
+      },
+      "anxiety": {
+        "chi2": 86.491,
+        "p_value": 1.74e-12,
+        "cramers_v": 0.1894,
+        "significant_005": true
+      }
+    },
+    "Department": {
+      "unique_categories": 12,
+      "depression": {
+        "chi2": 17.935,
+        "p_value": 0.0831,
+        "cramers_v": 0.0586,
+        "significant_005": false
+      },
+      "anxiety": {
+        "chi2": 19.949,
+        "p_value": 0.046,
+        "cramers_v": 0.0665,
+        "significant_005": true
+      }
+    },
+    "Academic_Year": {
+      "unique_categories": 5,
+      "depression": {
+        "chi2": 10.316,
+        "p_value": 0.0354,
+        "cramers_v": 0.0559,
+        "significant_005": true
+      },
+      "anxiety": {
+        "chi2": 29.708,
+        "p_value": 5.61e-06,
+        "cramers_v": 0.1128,
+        "significant_005": true
+      }
+    },
+    "Current_CGPA": {
+      "unique_categories": 6,
+      "depression": {
+        "chi2": 6.378,
+        "p_value": 0.271,
+        "cramers_v": 0.0261,
+        "significant_005": false
+      },
+      "anxiety": {
+        "chi2": 10.318,
+        "p_value": 0.0667,
+        "cramers_v": 0.0513,
+        "significant_005": false
+      }
+    },
+    "waiver_or_scholarship": {
+      "unique_categories": 2,
+      "depression": {
+        "chi2": 1.58,
+        "p_value": 0.209,
+        "cramers_v": 0.0169,
+        "significant_005": false
+      },
+      "anxiety": {
+        "chi2": 1.988,
+        "p_value": 0.159,
+        "cramers_v": 0.0221,
+        "significant_005": false
+      }
+    }
+  },
+  "numeric_tests": {
+    "PSS1": {
+      "overall_mean": 2.35,
+      "overall_std": 1.18,
+      "depression": {
+        "mean_pos": 2.63,
+        "mean_neg": 1.61,
+        "diff": 1.01,
+        "t_stat": 18.82,
+        "t_pval": 5.37e-68,
+        "cohens_d": 0.934
+      },
+      "anxiety": {
+        "mean_pos": 2.69,
+        "mean_neg": 1.65,
+        "diff": 1.05,
+        "t_stat": 20.655,
+        "t_pval": 2.28e-82,
+        "cohens_d": 0.977
+      }
+    },
+    "PSS2": {
+      "overall_mean": 2.33,
+      "overall_std": 1.16,
+      "depression": {
+        "mean_pos": 2.62,
+        "mean_neg": 1.55,
+        "diff": 1.07,
+        "t_stat": 20.878,
+        "t_pval": 2.75e-81,
+        "cohens_d": 1.026
+      },
+      "anxiety": {
+        "mean_pos": 2.67,
+        "mean_neg": 1.62,
+        "diff": 1.05,
+        "t_stat": 21.2,
+        "t_pval": 3.56e-86,
+        "cohens_d": 1.002
+      }
+    },
+    "PSS3": {
+      "overall_mean": 2.71,
+      "overall_std": 1.13,
+      "depression": {
+        "mean_pos": 2.99,
+        "mean_neg": 1.95,
+        "diff": 1.04,
+        "t_stat": 19.905,
+        "t_pval": 2.91e-74,
+        "cohens_d": 0.997
+      },
+      "anxiety": {
+        "mean_pos": 3.07,
+        "mean_neg": 1.95,
+        "diff": 1.12,
+        "t_stat": 23.563,
+        "t_pval": 1.68e-102,
+        "cohens_d": 1.118
+      }
+    },
+    "PSS4": {
+      "overall_mean": 2.37,
+      "overall_std": 1.22,
+      "depression": {
+        "mean_pos": 2.67,
+        "mean_neg": 1.58,
+        "diff": 1.09,
+        "t_stat": 19.788,
+        "t_pval": 3.84e-74,
+        "cohens_d": 0.977
+      },
+      "anxiety": {
+        "mean_pos": 2.75,
+        "mean_neg": 1.59,
+        "diff": 1.16,
+        "t_stat": 22.984,
+        "t_pval": 1.98e-99,
+        "cohens_d": 1.075
+      }
+    },
+    "PSS5": {
+      "overall_mean": 2.18,
+      "overall_std": 1.08,
+      "depression": {
+        "mean_pos": 2.16,
+        "mean_neg": 2.22,
+        "diff": -0.06,
+        "t_stat": -1.092,
+        "t_pval": 0.275,
+        "cohens_d": -0.056
+      },
+      "anxiety": {
+        "mean_pos": 2.16,
+        "mean_neg": 2.21,
+        "diff": -0.04,
+        "t_stat": -0.85,
+        "t_pval": 0.395,
+        "cohens_d": -0.041
+      }
+    },
+    "PSS6": {
+      "overall_mean": 1.79,
+      "overall_std": 1.1,
+      "depression": {
+        "mean_pos": 1.74,
+        "mean_neg": 1.94,
+        "diff": -0.21,
+        "t_stat": -3.803,
+        "t_pval": 0.000151,
+        "cohens_d": -0.189
+      },
+      "anxiety": {
+        "mean_pos": 1.7,
+        "mean_neg": 1.99,
+        "diff": -0.29,
+        "t_stat": -5.695,
+        "t_pval": 1.51e-08,
+        "cohens_d": -0.269
+      }
+    },
+    "PSS7": {
+      "overall_mean": 1.93,
+      "overall_std": 1.02,
+      "depression": {
+        "mean_pos": 1.92,
+        "mean_neg": 1.96,
+        "diff": -0.04,
+        "t_stat": -0.821,
+        "t_pval": 0.412,
+        "cohens_d": -0.042
+      },
+      "anxiety": {
+        "mean_pos": 1.92,
+        "mean_neg": 1.95,
+        "diff": -0.03,
+        "t_stat": -0.627,
+        "t_pval": 0.531,
+        "cohens_d": -0.03
+      }
+    },
+    "PSS8": {
+      "overall_mean": 1.72,
+      "overall_std": 1.13,
+      "depression": {
+        "mean_pos": 1.65,
+        "mean_neg": 1.93,
+        "diff": -0.28,
+        "t_stat": -5.038,
+        "t_pval": 5.55e-07,
+        "cohens_d": -0.249
+      },
+      "anxiety": {
+        "mean_pos": 1.65,
+        "mean_neg": 1.88,
+        "diff": -0.23,
+        "t_stat": -4.378,
+        "t_pval": 1.29e-05,
+        "cohens_d": -0.207
+      }
+    },
+    "PSS9": {
+      "overall_mean": 2.43,
+      "overall_std": 1.18,
+      "depression": {
+        "mean_pos": 2.69,
+        "mean_neg": 1.72,
+        "diff": 0.97,
+        "t_stat": 18.564,
+        "t_pval": 3.96e-67,
+        "cohens_d": 0.903
+      },
+      "anxiety": {
+        "mean_pos": 2.76,
+        "mean_neg": 1.74,
+        "diff": 1.03,
+        "t_stat": 20.585,
+        "t_pval": 2.09e-82,
+        "cohens_d": 0.964
+      }
+    },
+    "PSS10": {
+      "overall_mean": 2.44,
+      "overall_std": 1.17,
+      "depression": {
+        "mean_pos": 2.72,
+        "mean_neg": 1.69,
+        "diff": 1.03,
+        "t_stat": 19.98,
+        "t_pval": 9.63e-76,
+        "cohens_d": 0.978
+      },
+      "anxiety": {
+        "mean_pos": 2.8,
+        "mean_neg": 1.69,
+        "diff": 1.11,
+        "t_stat": 23.316,
+        "t_pval": 3.36e-102,
+        "cohens_d": 1.086
+      }
+    },
+    "pss_score": {
+      "overall_mean": 22.99,
+      "overall_std": 6.75,
+      "depression": {
+        "mean_pos": 24.84,
+        "mean_neg": 18.05,
+        "diff": 6.79,
+        "t_stat": 25.971,
+        "t_pval": 4.04e-121,
+        "cohens_d": 1.201
+      },
+      "anxiety": {
+        "mean_pos": 25.32,
+        "mean_neg": 18.2,
+        "diff": 7.12,
+        "t_stat": 28.291,
+        "t_pval": 1.41e-144,
+        "cohens_d": 1.272
+      }
+    }
+  },
+  "sampling_biases": {
+    "gender_bias": {
+      "male_pct": 69.19,
+      "female_pct": 30.32,
+      "note": "Substantial male overrepresentation (69.2% male vs 30.3% female)"
+    },
+    "discipline_bias": {
+      "cs_engineering_pct": 69.49,
+      "note": "Strong concentration in Computer Science / IT majors (69.5%)"
+    },
+    "institutional_concentration": {
+      "top_2_unis_pct": 51.09,
+      "top_5_unis_pct": 82.29,
+      "note": "Top 2 institutions constitute 51.1% of all records; top 5 constitute 82.2%"
+    },
+    "age_bias": {
+      "bracket_18_22_pct": 64.29,
+      "note": "Undergraduate early-stage student concentration"
+    }
+  }
+}

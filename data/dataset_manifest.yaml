@@ -1,0 +1,267 @@
+project: StudentMind AI
+provenance_standard: Immutable Raw Data with SHA-256 Verification
+created_at: '2026-10-03T21:30:00+05:30'
+datasets:
+  25771164_bangladesh:
+    name: MHP (Anxiety, Stress, Depression) Dataset of University Students (Bangladesh)
+    doi: 10.6084/m9.figshare.25771164
+    purpose: Primary ML training, validation, cross-validation, and evaluation
+    license: CC BY 4.0
+    download_date: 2026-10-03 (Rebuild initialization)
+    citation: Hasan, M. et al. (2024). MHP (Anxiety, Stress, Depression) Dataset of
+      University Students. Figshare. https://doi.org/10.6084/m9.figshare.25771164
+    known_limitations: Cross-sectional self-reported survey in Bangladeshi university
+      students; non-clinical sample; unverified institutional IDs; self-selection
+      bias.
+    files:
+      Anxiety.csv:
+        sha256: d436f96e982c271650b37c2477326c2f9eb23931f155475dea04ff7de3cd35a0
+        size_bytes: 341614
+        row_count: 2028
+        col_count: 16
+        columns_sample:
+        - 1. Age
+        - 2. Gender
+        - 3. University
+        - 4. Department
+        - 5. Academic Year
+        - 6. Current CGPA
+        - 7. Did you receive a waiver or scholarship at your university?
+        - '1. In a semester, how often you felt nervous, anxious or on edge due to
+          academic pressure? '
+        - '2. In a semester, how often have you been unable to stop worrying about
+          your academic affairs? '
+        - '3. In a semester, how often have you had trouble relaxing due to academic
+          pressure? '
+        total_columns: 16
+      Depression.csv:
+        sha256: 2e0eae7cf223689a0dceb70287579057508c17f9eefbb8dbfb472ff0f49818fc
+        size_bytes: 361487
+        row_count: 2028
+        col_count: 18
+        columns_sample:
+        - 1. Age
+        - 2. Gender
+        - 3. University
+        - 4. Department
+        - 5. Academic Year
+        - 6. Current CGPA
+        - 7. Did you receive a waiver or scholarship at your university?
+        - 1. In a semester, how often have you had little interest or pleasure in
+          doing things?
+        - 2. In a semester, how often have you been feeling down, depressed or hopeless?
+        - '3. In a semester, how often have you had trouble falling or staying asleep,
+          or sleeping too much? '
+        total_columns: 18
+      Processed.csv:
+        sha256: 0a72bb3b7300b115f92af897608b9722e81de0b0f23473025e8bac078feed726
+        size_bytes: 505100
+        row_count: 2028
+        col_count: 39
+        columns_sample:
+        - Age
+        - Gender
+        - University
+        - Department
+        - Academic_Year
+        - Current_CGPA
+        - waiver_or_scholarship
+        - PSS1
+        - PSS2
+        - PSS3
+        total_columns: 39
+      Raw Dataset.csv:
+        sha256: 30988a2611ee06690d67159967c1abe81cdd119f2b996e45c91eb3c3a4e7c378
+        size_bytes: 1265089
+        row_count: 2028
+        col_count: 33
+        columns_sample:
+        - 1. Age
+        - 2. Gender
+        - 3. University
+        - 4. Department
+        - 5. Academic Year
+        - 6. Current CGPA
+        - 7. Did you receive a waiver or scholarship at your university?
+        - '1. In a semester, how often have you felt upset due to something that happened
+          in your academic affairs? '
+        - 2. In a semester, how often you felt as if you were unable to control important
+          things in your academic affairs?
+        - '3. In a semester, how often you felt nervous and stressed because of academic
+          pressure? '
+        total_columns: 33
+      Stress.csv:
+        sha256: 7b71f33a6eadda237c718f9487eb02fd8c9158787fab816529cea36733f4fd41
+        size_bytes: 359303
+        row_count: 2028
+        col_count: 19
+        columns_sample:
+        - 1. Age
+        - 2. Gender
+        - 3. University
+        - 4. Department
+        - 5. Academic Year
+        - 6. Current CGPA
+        - 7. Did you receive a waiver or scholarship at your university?
+        - '1. In a semester, how often have you felt upset due to something that happened
+          in your academic affairs? '
+        - 2. In a semester, how often you felt as if you were unable to control important
+          things in your academic affairs?
+        - '3. In a semester, how often you felt nervous and stressed because of academic
+          pressure? '
+        total_columns: 19
+      Supplementary file -Questionnaire.pdf:
+        sha256: ebfb219b4a648330aab41fa6e989dca729f8017bb2bcac8aeb2902df776b9d2d
+        size_bytes: 1232647
+        row_count: null
+        col_count: null
+        columns_sample: null
+        total_columns: null
+  10423537_xinxiang:
+    name: Temporal Dynamics in Psychological Assessments (Xinxiang Medical University,
+      China)
+    doi: 10.5281/zenodo.10423537
+    purpose: Secondary research / external cohort analysis / psychometric validation
+      (NOT merged for primary training)
+    license: Creative Commons Attribution 4.0 International
+    download_date: 2026-10-03 (Rebuild initialization)
+    citation: Gong, W. et al. (2023). Temporal Dynamics in Psychological Assessments.
+      Zenodo. https://doi.org/10.5281/zenodo.10423537
+    known_limitations: Medical student cohort in China; distinct cultural and language
+      context; distinct demographic distributions; not directly comparable without
+      domain adaptation.
+    files:
+      demographic.csv:
+        sha256: 33247e3a6f1a8d9b64da54ab8f482b1bf26decfa3a825398d8c5d4d7564af693
+        size_bytes: 1805908
+        row_count: 24292
+        col_count: 6
+        columns_sample:
+        - export_id
+        - gender
+        - age
+        - edu
+        - smoke
+        - drink
+        total_columns: 6
+      gad7.csv:
+        sha256: e47ec29e61f30cadee85ed66d39092fa47f41fecb47544f30626fc33b021218f
+        size_bytes: 1375746
+        row_count: 24292
+        col_count: 16
+        columns_sample:
+        - export_id
+        - score
+        - question1
+        - time1
+        - question2
+        - time2
+        - question3
+        - time3
+        - question4
+        - time4
+        total_columns: 16
+      isi.csv:
+        sha256: 3e748c0fd7827a271bcd7347a5ca442445596be9c6dbe51743661111ad0d6889
+        size_bytes: 1378464
+        row_count: 24292
+        col_count: 16
+        columns_sample:
+        - export_id
+        - score
+        - question1
+        - time1
+        - question2
+        - time2
+        - question3
+        - time3
+        - question4
+        - time4
+        total_columns: 16
+      phq9.csv:
+        sha256: 0e837b6cf289c4083ebd131e6bc7a52d63eefae3113a8738b57eb8ef51b9aece
+        size_bytes: 1717995
+        row_count: 24292
+        col_count: 20
+        columns_sample:
+        - export_id
+        - score
+        - question1
+        - time1
+        - question2
+        - time2
+        - question3
+        - time3
+        - question4
+        - time4
+        total_columns: 20
+      pss.csv:
+        sha256: ad844acb6c4239be4daf2400bb101dda770b41989523c5c7185c6c468da46397
+        size_bytes: 2585243
+        row_count: 24292
+        col_count: 30
+        columns_sample:
+        - export_id
+        - score
+        - question1
+        - time1
+        - question2
+        - time2
+        - question3
+        - time3
+        - question4
+        - time4
+        total_columns: 30
+  24052236_uk:
+    name: UK University Student Mental Health Dataset
+    doi: 10.6084/m9.figshare.24052236.v2
+    purpose: Secondary research / cross-national validation / comorbidity exploration
+      (NOT merged for primary training)
+    license: CC BY 4.0
+    download_date: 2026-10-03 (Rebuild initialization)
+    citation: Akram, U. et al. (2023). UK University Student Mental Health Dataset.
+      Figshare. https://doi.org/10.6084/m9.figshare.24052236.v2
+    known_limitations: UK higher-education cohort; diverse higher-level psychometric
+      battery (MDQ, SCI, SBQ-R); different demographic structures.
+    files:
+      Akram et al 2023 Student MH Data UK SciData.sav:
+        sha256: e83abd97610601585bf8ae5f023820db7a089c3cd3c335f4be901cb40e55e342
+        size_bytes: 2390110
+        row_count: 1408
+        col_count: 112
+        columns_sample:
+        - Age
+        - Sex
+        - Gender
+        - Course_Type
+        - Ethnicity
+        - Ethnicity_2
+        - Ethnicity_3
+        - Ethnicity_4
+        - Ethnicity_5
+        - Ethnicity_6
+        total_columns: 112
+      Akram et al 2023 Student MH Data UK SciData.xlsx:
+        sha256: e04b2a75dd4c46021c8520ba013fada3db73d03a694fea6afc06769ca0ae4e64
+        size_bytes: 490193
+        row_count: 1408
+        col_count: 112
+        columns_sample:
+        - Age
+        - Sex
+        - Gender
+        - Course_Type
+        - Ethnicity
+        - Ethnicity_2
+        - Ethnicity_3
+        - Ethnicity_4
+        - Ethnicity_5
+        - Ethnicity_6
+        total_columns: 112
+      Variable codes and abbreviations .pdf:
+        sha256: 71f46254d4eaa287fb72679c2032129c3f5f3f088e985a4629985df15fbd7b7c
+        size_bytes: 108260
+        row_count: null
+        col_count: null
+        columns_sample: null
+        total_columns: null

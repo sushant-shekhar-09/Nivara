@@ -1,0 +1,17 @@
+{
+  "model_version": "1.0.0",
+  "target": "Elevated Anxiety Screening Risk (GAD-7 >= 10)",
+  "target_key": "anxiety",
+  "target_column": "elevated_anxiety",
+  "algorithm": "RandomForest",
+  "calibration_method": "isotonic",
+  "decision_threshold": 0.43,
+  "dataset_version": "Bangladesh MHP figshare:25771164 (Deduplicated N=2022)",
+  "training_samples": 2022,
+  "cv_strategy": "5-fold StratifiedGroupKFold on University",
+  "training_timestamp": "2026-10-03T17:06:15.462863+00:00",
+  "bundle_filename": "model_bundle.joblib",
+  "bundle_sha256": "3ae3108acae3c6dbc86b0f22ea33b1af60f716d68cdc38020e2ac421b103a456",
+  "bundle_size_bytes": 1799090,
+  "code_version": "studentmind==1.0.0"
+}

@@ -1,0 +1,17 @@
+{
+  "model_version": "1.0.0",
+  "target": "Elevated Depression Screening Risk (PHQ-9 >= 10)",
+  "target_key": "depression",
+  "target_column": "elevated_depression",
+  "algorithm": "RandomForest",
+  "calibration_method": "isotonic",
+  "decision_threshold": 0.434,
+  "dataset_version": "Bangladesh MHP figshare:25771164 (Deduplicated N=2022)",
+  "training_samples": 2022,
+  "cv_strategy": "5-fold StratifiedGroupKFold on University",
+  "training_timestamp": "2026-10-03T17:06:15.462863+00:00",
+  "bundle_filename": "model_bundle.joblib",
+  "bundle_sha256": "dfca5b964db6859550ef275692540354819a9d2511acb10ddf25c77f7a2652c0",
+  "bundle_size_bytes": 1706187,
+  "code_version": "studentmind==1.0.0"
+}

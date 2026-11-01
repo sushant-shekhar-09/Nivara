@@ -1,0 +1,21 @@
+{
+  "name": "launch-teaser",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "serve": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@motion-canvas/2d": "^3.17.0",
+    "@motion-canvas/core": "^3.17.0",
+    "@motion-canvas/ffmpeg": "^1.1.0",
+    "@motion-canvas/ui": "^3.17.2"
+  },
+  "devDependencies": {
+    "@motion-canvas/vite-plugin": "^3.17.0",
+    "typescript": "^5.0.0",
+    "vite": "^5.0.0"
+  }
+}
