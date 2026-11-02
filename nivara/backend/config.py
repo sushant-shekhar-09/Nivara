@@ -54,7 +54,7 @@ class Settings(BaseSettings):
 
     # CORS Allowed Origins (accepts comma-separated string or list)
     ALLOWED_ORIGINS: str | list[str] = (
-        "http://localhost:5173,http://127.0.0.1:5173,http://localhost:3000,http://127.0.0.1:3000,http://localhost:8000,http://127.0.0.1:8000"
+        "http://localhost:5173,http://127.0.0.1:5173,http://localhost:3000,http://127.0.0.1:3000,http://localhost:8000,http://127.0.0.1:8000,https://nivara-wheat.vercel.app"
     )
 
     @field_validator("ALLOWED_ORIGINS")

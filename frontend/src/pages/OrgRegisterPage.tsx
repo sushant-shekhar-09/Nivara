@@ -82,7 +82,8 @@ export const OrgRegisterPage: React.FC = () => {
     } catch (err: any) {
       setError(
         err.detail ||
-          'Registration failed. Please check institutional details or official organizational email.'
+        err.message ||
+        'Registration failed. Please check institutional details or official organizational email.'
       );
     } finally {
       setIsLoading(false);

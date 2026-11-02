@@ -41,7 +41,8 @@ export const OrgLoginPage: React.FC = () => {
     } catch (err: any) {
       setError(
         err.detail ||
-          'Institutional authentication failed. Please verify credentials or contact platform support.'
+        err.message ||
+        'Institutional authentication failed. Please verify credentials or contact platform support.'
       );
     } finally {
       setIsLoading(false);
