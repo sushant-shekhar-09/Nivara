@@ -9,7 +9,8 @@
  * - No PII in console logs
  */
 
-const API_BASE = (import.meta.env.VITE_API_URL as string | undefined)?.replace(/\/$/, '') || 'http://localhost:8000/api';
+const rawApiUrl = ((import.meta.env.VITE_API_URL || import.meta.env.VITE_API_BASE_URL) as string | undefined)?.replace(/\/$/, '') || 'http://localhost:8000/api';
+const API_BASE = rawApiUrl.endsWith('/api') ? rawApiUrl : `${rawApiUrl}/api`;
 
 interface ApiError {
   status: number;
