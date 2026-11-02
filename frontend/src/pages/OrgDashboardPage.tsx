@@ -858,15 +858,15 @@ export const OrgDashboardPage: React.FC = () => {
                             Your campus portal is deployed and available for student wellbeing screening.
                           </p>
                         </div>
-                        <a
-                          href={`/screening?tenant=${req.custom_subdomain || org?.slug}`}
+                        <Link
+                          to={`/screening?tenant=${req.custom_subdomain || org?.slug || ''}`}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="px-4 py-2 rounded-full text-xs font-semibold bg-[#1C3A13] text-[#FCFCF7] flex items-center justify-center gap-2 hover:bg-[#2F302B] transition-colors whitespace-nowrap"
                         >
                           <span>Open Campus Portal</span>
                           <ExternalLink className="w-3.5 h-3.5" />
-                        </a>
+                        </Link>
                       </div>
                     )}
 
