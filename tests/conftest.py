@@ -2,14 +2,14 @@
 Test suite configuration and shared fixtures for Nivara AI.
 """
 
-import pytest
 import os
 import sys
 from pathlib import Path
 import pandas as pd
+import pytest
 
-# Default to SQLite for isolated unit/integration test runs when PostgreSQL is not running locally
-os.environ.setdefault("DATABASE_URL", "sqlite+aiosqlite:///./test_nivara.db")
+# Default to SQLite for isolated unit/integration test runs when database server is not running locally
+os.environ["DATABASE_URL"] = os.getenv("TEST_DATABASE_URL", "sqlite+aiosqlite:///./test_nivara.db")
 os.environ["NIVARA_TEST_MODE"] = "true"
 
 BASE_DIR = Path(__file__).resolve().parent.parent

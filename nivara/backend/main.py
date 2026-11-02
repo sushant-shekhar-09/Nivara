@@ -6,6 +6,7 @@ import logging
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from sqlalchemy import text
 
 from nivara.backend.config import settings
 from nivara.backend.database import engine, Base
@@ -23,26 +24,23 @@ logger.setLevel(logging.INFO)
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # Initialize DB schemas on startup if connecting to DB
+    # Lifecycle startup: verify connectivity and initialize test schema if in SQLite test mode
     logger.info("Initializing Nivara AI Backend Services...")
     try:
-        from sqlalchemy import text
         async with engine.begin() as conn:
-            await conn.run_sync(Base.metadata.create_all)
-            if conn.dialect.name == "postgresql":
-                try:
-                    await conn.execute(text("ALTER TABLE screening_sessions ADD COLUMN IF NOT EXISTS tenant_id VARCHAR(36) REFERENCES tenants(id);"))
-                    await conn.execute(text("ALTER TABLE screening_sessions ADD COLUMN IF NOT EXISTS campaign_id VARCHAR(36) REFERENCES screening_campaigns(id);"))
-                    await conn.execute(text("ALTER TABLE research_surveys ADD COLUMN IF NOT EXISTS consortium_id VARCHAR(36) REFERENCES research_consortia(id);"))
-                    await conn.execute(text("ALTER TABLE organization_template_requests ADD COLUMN IF NOT EXISTS internal_notes TEXT;"))
-                    await conn.execute(text("ALTER TABLE organization_template_requests ADD COLUMN IF NOT EXISTS assigned_reviewer_id VARCHAR(36) REFERENCES users(id);"))
-                except Exception:
-                    pass
-        logger.info("Database schemas verified and initialized.")
+            if conn.dialect.name == "sqlite":
+                # For isolated SQLite tests, initialize schema automatically
+                await conn.run_sync(Base.metadata.create_all)
+                logger.info("SQLite test database schema initialized.")
+            else:
+                # Production PostgreSQL / Supabase: schema is authoritatively managed via Alembic
+                await conn.execute(text("SELECT 1"))
+                logger.info("PostgreSQL database connection verified (schema managed via Alembic).")
     except Exception as e:
         logger.warning(f"Database connection note: {e}. Running in lightweight mode.")
     yield
     logger.info("Shutting down Nivara AI Backend Services...")
+    await engine.dispose()
 
 app = FastAPI(
     title=settings.PROJECT_NAME,

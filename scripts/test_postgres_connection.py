@@ -4,7 +4,7 @@ import asyncpg
 async def test_conn():
     conn = await asyncpg.connect(
         user="postgres",
-        host="localhost",
+        host="127.0.0.1",
         port=5432,
         database="nivara"
     )

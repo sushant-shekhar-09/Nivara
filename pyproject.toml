@@ -10,7 +10,7 @@ authors = [
     {name = "Nivara Research & Engineering Team"}
 ]
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.11,<3.13"
 dependencies = [
     "pandas>=2.0.0",
     "numpy>=1.24.0",
@@ -21,6 +21,9 @@ dependencies = [
     "fastapi>=0.100.0",
     "uvicorn>=0.23.0",
     "pydantic>=2.0.0",
+    "pydantic-settings>=2.0.0",
+    "python-dotenv>=1.0.0",
+    "pyjwt>=2.8.0",
     "sqlalchemy>=2.0.0",
     "alembic>=1.12.0",
     "asyncpg>=0.28.0",
