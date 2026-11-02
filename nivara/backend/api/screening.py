@@ -34,9 +34,22 @@ async def submit_screening(
             if tenant:
                 tenant_id = tenant.id
 
+        # Create guest user account to satisfy foreign key requirement for anonymous student
+        from nivara.backend.models import User
+        from nivara.privacy.auth import hash_password
+        guest_user = User(
+            id=str(uuid.uuid4()),
+            email=f"guest_{uuid.uuid4().hex[:12]}@anonymous.nivara.local",
+            hashed_password=hash_password(str(uuid.uuid4())),
+            role="student",
+            is_active=True
+        )
+        db.add(guest_user)
+        await db.flush()
+
         # Check or create profile
         profile = StudentProfile(
-            user_id=str(uuid.uuid4()),  # anonymous guest or linked
+            user_id=guest_user.id,
             age=submission.profile.age,
             gender=submission.profile.gender,
             university=submission.profile.university,

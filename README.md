@@ -3,13 +3,14 @@
   <h1>Nivara AI: Privacy-First, Explainable Early Mental-Health Screening Platform</h1>
 </div>
 
-[![Python](https://img.shields.io/badge/Python-3.11-blue.svg)](https://www.python.org/)
+[![Python](https://img.shields.io/badge/Python-3.11.9-blue.svg)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.115+-009688.svg)](https://fastapi.tiangolo.com)
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16.4-336791.svg)](https://www.postgresql.org/)
-[![React](https://img.shields.io/badge/React-19.0-61DAFB.svg)](https://react.dev/)
+[![PostgreSQL](https://img.shields.io/badge/Database-Supabase%20PostgreSQL%2017-336791.svg)](https://supabase.com/)
+[![React](https://img.shields.io/badge/Frontend-React%2019%20%2B%20Vite%20(Vercel)-61DAFB.svg)](https://vercel.com/)
+[![Backend](https://img.shields.io/badge/Backend-Render-46E3B7.svg)](https://render.com/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178C6.svg)](https://www.typescriptlang.org/)
 [![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.4-38B2AC.svg)](https://tailwindcss.com/)
-[![Tests](https://img.shields.io/badge/Tests-24%20Passed-brightgreen.svg)]()
+[![Alembic](https://img.shields.io/badge/Migrations-Alembic-E44D26.svg)](https://alembic.sqlalchemy.org/)
 
 > **CRITICAL CLINICAL & ETHICAL DISCLAIMER:**  
 > **Nivara AI (StudentMind) is strictly a non-diagnostic early screening and triage support tool.** It is **NOT** a diagnostic system. Its machine learning models estimate the statistical probability of elevated screening distress on standardized instruments (PHQ-9 $\ge 10$ and GAD-7 $\ge 10$) based on academic stress and demographic indicators.  
@@ -17,35 +18,35 @@
 
 ---
 
-## 1. System Architecture
+## 1. System Architecture & Production Deployment
+
+Nivara is built as a cloud-native, decoupled micro-architecture:
+
+- **Frontend:** React 19 + TypeScript + Vite hosted on **Vercel** (`https://nivara-wheat.vercel.app`) with SPA rewrites.
+- **Backend:** FastAPI + Uvicorn + SQLAlchemy 2.0 Async running on **Render** (Python 3.11.9 runtime).
+- **Database:** **Supabase PostgreSQL 17** accessed via the Session Pooler (`aws-0-ap-northeast-1.pooler.supabase.com:5432`) using `asyncpg` with SSL and statement caching disabled (`statement_cache_size=0`).
+- **Schema Migrations:** Authoritatively managed via **Alembic** (Baseline revision: `20261102_0001`).
 
 ```mermaid
 flowchart TD
-    subgraph Data Layer
+    subgraph Data & Pipeline Layer
         RAW["Raw Immutable Data\n(Bangladesh N=2028, Xinxiang N=24292, UK N=1408)"] --> AUDIT["Data Audit & Item Reconstruction\n(6 Duplicates Dropped -> N=2022 Clean\nPSS-10 Items 5,6,7,8 Reverse Scored: 100% Match)"]
         AUDIT --> CONTRACT["Versioned Feature Contract v1.0.0\n(Strict Zero Target Leakage Enforcement)"]
+        CONTRACT --> CV["5-Fold StratifiedGroupKFold on University"]
+        CV --> WINNER["Random Forest Winner (Isotonic Calibrated)\n(Dep ROC-AUC: 0.8145, Anx: 0.8328)"]
+        WINNER --> ARTIFACTS["Frozen SHA-256 Model Bundles\n(artifacts/depression & artifacts/anxiety)"]
     end
 
-    subgraph Machine Learning Pipeline
-        CONTRACT --> CV["5-Fold StratifiedGroupKFold\n(Group: University, Stratified by Target)"]
-        CV --> BENCHMARK["Algorithm Comparison:\nLogistic Regression vs. Random Forest vs. XGBoost"]
-        BENCHMARK --> WINNER["Winner: Random Forest\n(Depression ROC-AUC: 0.8145, Anxiety: 0.8328)"]
-        WINNER --> TUNING["Out-of-Fold Threshold Tuning\n(Dep: 0.434 -> Rec 78.3%, Anx: 0.430 -> Rec 80.7%)"]
-        TUNING --> CALIBRATION["Isotonic Probability Calibration\n(Dep Brier: 0.1802 -> 0.1474, Anx: 0.1788 -> 0.1532)"]
-        CALIBRATION --> ARTIFACTS["Frozen Model Artifacts\n(artifacts/depression & artifacts/anxiety with SHA-256)"]
+    subgraph Runtime Inference & Safety Gateway
+        CLIENT["Vercel Frontend Client\n(Web, Mobile Web, Voice-First UX)"] --> API["FastAPI API Gateway (Render)\n(CORS auto-regex: *.vercel.app)"]
+        API --> SAFETY{"PHQ-9 Item 9 > 0?\n(Deterministic Crisis Rule)"}
+        SAFETY -- "Yes" --> CRISIS["Immediate Crisis Intercept\n(Tele-MANAS, 112, KIRAN, Audit Log)"]
+        SAFETY -- "No" --> INFERENCE["Frozen Inference Engine\n(Calibrated Probability + TreeSHAP)"]
     end
 
-    subgraph Inference & Safety Gateway
-        SUBMIT["Student Screening Battery\n(Context + PSS-10 + PHQ-9 + GAD-7)"] --> INTERCEPT{"PHQ-9 Item 9 > 0?\n(Deterministic Crisis Rule)"}
-        INTERCEPT -- "Yes (Passive/Active Distress)" --> SAFETY["Deterministic Crisis Pathway\n(Verified Hotlines: Tele-MANAS, 112, KIRAN)"]
-        INTERCEPT -- "No" --> INFERENCE["Frozen Inference Engine\n(Zero-Retraining, Zero-Dummy Predictions)"]
-        INFERENCE --> SHAP["TreeSHAP Explainability\n(Attribution Only; Non-Causal Lexical Filter)"]
-    end
-
-    subgraph Full-Stack Application
-        INFERENCE & SHAP & SAFETY --> BACKEND["FastAPI Backend Service\n(SQLAlchemy Async 2.0 + PostgreSQL 16)"]
-        BACKEND --> PRIVACY["Privacy & Security Guard\n(Argon2id + RBAC + PII Redactor + k>=5 Suppression)"]
-        BACKEND --> FRONTEND["React 19 + TypeScript + Vite Frontend\n(Results, Attributions, Crisis Overlays, Analytics)"]
+    subgraph Multi-Tenant Database Layer
+        API --> DB[("Supabase PostgreSQL 17\n(Session Pooler + asyncpg + SSL)")]
+        DB --> TABLES["21 Domain Tables\n(tenants, users, screenings, crisis_logs, orgs, surveys)"]
     end
 ```
 
@@ -71,117 +72,142 @@ Evaluated under strict **5-Fold `StratifiedGroupKFold` on University** with all 
 
 ---
 
-## 3. Core Technical & Scientific Pillars
+## 3. Core Technical & Clinical Pillars
 
 ### 1. Data Provenance & Cryptographic Immutability
-- All 14 raw dataset files across Bangladesh (DOI: `10.6084/m9.figshare.25771164`), China-Xinxiang (DOI: `10.5281/zenodo.10423537`), and UK (DOI: `10.6084/m9.figshare.24052236.v2`) cohorts are stored in `data/raw/` with immutable permissions.
-- SHA-256 cryptographic hashes are recorded in `data/dataset_manifest.json` and validated during pipeline execution.
+- Raw cohorts across Bangladesh (DOI: `10.6084/m9.figshare.25771164`), China-Xinxiang (DOI: `10.5281/zenodo.10423537`), and UK (DOI: `10.6084/m9.figshare.24052236.v2`) cohorts are preserved in `data/raw/`.
+- SHA-256 cryptographic hashes are recorded in `data/dataset_manifest.json` and validated during execution.
 
 ### 2. Psychometric Score Reconstruction Audit
-- **PHQ-9:** $\text{PHQ} = \sum_{i=1}^9 \text{PHQ}_i \implies 100\%$ exact match with dataset column.
-- **GAD-7:** $\text{GAD} = \sum_{i=1}^7 \text{GAD}_i \implies 100\%$ exact match with dataset column.
-- **PSS-10 Reverse Scoring Discovery:** While standard Cohen PSS-10 reverses items 4, 5, 7, 8, the survey question ordering placed Item 4 before Item 5. Consequently, the positively phrased items in this questionnaire were **5, 6, 7, and 8**. Reconstructing with $4 - x$ on items 5, 6, 7, 8 achieved **2,028 / 2,028 (100.00%) exact match**.
-- Six exact duplicate rows (`[492, 533, 763, 1120, 1362, 1369]`) were identified and documented, establishing the clean baseline of $N = 2,022$ unique students.
+- **PHQ-9:** $\text{PHQ} = \sum_{i=1}^9 \text{PHQ}_i \implies 100\%$ exact match.
+- **GAD-7:** $\text{GAD} = \sum_{i=1}^7 \text{GAD}_i \implies 100\%$ exact match.
+- **PSS-10 Reverse Scoring:** Positively phrased items were identified as **5, 6, 7, and 8** due to questionnaire arrangement. Reconstructing with $4 - x$ achieved **2,028 / 2,028 (100.00%) exact match**.
+- Six exact duplicate rows (`[492, 533, 763, 1120, 1362, 1369]`) dropped, establishing clean baseline of $N = 2,022$ students.
 
-### 3. Institutional Clustering & Cross-Validation Strategy
-- Chi-square tests revealed significant institutional clustering across Bangladesh universities ($p = 7.97 \times 10^{-8}$ for depression, $p = 1.74 \times 10^{-12}$ for anxiety).
-- Ordinary random splitting allows students from the same university to be distributed across train and test sets, causing optimistic performance bias. We enforced **5-fold StratifiedGroupKFold on University**, ensuring models generalize across unseen campus environments.
+### 3. TreeSHAP Attribution (Non-Causal Explanation)
+- Top contributing features: `pss_score`, `PSS3` (nervous and stressed), `PSS10` (difficulties piling up), `PSS4` (coping ability).
+- Explanations are strictly framed as statistical attributions (*"Contributed toward estimated screening probability"*), never causal claims (*"Caused your distress"*), enforced by automated lexical scanning.
 
-### 4. Zero Target Leakage Enforcement
-- Automated feature contract (`nivara/features/contract.py`) strictly intercepts any target-derived column (`PHQ1-9`, `GAD1-7`, `Depression Value`, `Anxiety Value`).
-- Negative injection unit tests verify that attempting to pass prohibited items immediately raises a `ValueError`.
-
-### 5. TreeSHAP: Attribution vs. Causation
-- TreeSHAP computes Shapley values from cooperative game theory.
-- Top contributing features for both models: `pss_score`, `PSS3` (nervous and stressed), `PSS10` (difficulties piling up), and `PSS4` (coping ability).
-- Explanations are strictly framed as statistical attributions (*"Contributed toward the model's estimated screening risk"*), never causal assertions (*"Caused your depression"*). Validated via an automated lexical scanner.
-
-### 6. Decoupled Deterministic Crisis Pathway
-- **Rule:** If $\text{PHQ-9 Item 9} > 0$, an immediate deterministic crisis protocol is engaged.
-- Displays verified emergency services (India):
-  - **Tele-MANAS** (National Tele-Mental Health Programme: `14416 / 1800-891-4416`)
+### 4. Decoupled Deterministic Safety Pathway
+- If $\text{PHQ-9 Item 9} > 0$, an immediate deterministic crisis protocol is engaged.
+- Verified national emergency helplines:
+  - **Tele-MANAS** (`14416 / 1800-891-4416`)
   - **National Emergency Service (India):** `112`
   - **KIRAN Mental Health Helpline:** `1800-599-0019`
   - **Vandrevala Foundation:** `+91 9999 666 555`
-  - **Campus Counseling Center:** Tagged explicitly with `[DEMO - Not a real service]` badge.
 
-### 7. Privacy & Security by Design
-- **Password Security:** Password hashing via **Argon2id** (`argon2-cffi`).
-- **Role-Based Access Control (RBAC):** `student`, `counsellor`, `admin` roles enforced on sensitive endpoints.
-- **PII-Safe Logging:** Regex-based sanitization filter redacting emails, passwords, and phone numbers.
-- **Minimum-Group-Size Suppression:** Aggregate institutional analytics suppress cell counts where $k < 5$ to prevent deanonymization. Transparently documented as suppression rather than falsely claiming formal $k$-anonymity.
+### 5. Multi-Tenant Architecture & Institutional Governance
+- Supports self-contained campus tenants with custom branding, crisis contacts, and student cohorts.
+- Institutional registration and template provisioning workflows (`/org/register`, `/org/login`, `/org/dashboard`).
+- Minimum-group-size suppression ($k \ge 5$) on aggregate institutional analytics.
 
 ---
 
-## 4. Repository Structure
+## 4. Default Demo & Administrative Accounts
 
+To seed these accounts into your database, execute:
+```bash
+python scripts/seed_demo_accounts.py
 ```
-.
-├── artifacts/                  # Frozen production model bundles & SHA-256 manifests
-│   ├── depression/             # model_bundle.joblib, metadata.json, manifest.json
-│   └── anxiety/                # model_bundle.joblib, metadata.json, manifest.json
-├── assets/                     # Brand & project media assets
-│   └── logo/                   # Official Nivara logos (SVG & PNG, text & mark)
-├── data/                       # Datasets & analytical outputs
-│   ├── raw/                    # Immutable raw cohorts (25771164_bangladesh, 10423537_xinxiang, 24052236_uk)
-│   ├── dataset_manifest.json   # Cryptographic hashes of all raw files
-│   └── ml_benchmark_results.json # Full cross-validation metrics
-├── docs/                       # Comprehensive documentation
-│   ├── architecture/           # system_architecture.md
-│   ├── data/                   # data_provenance.md, data_audit_report.md
-│   ├── ml/                     # feature_contract.md, eda_report.md, model_selection.md, etc.
-│   ├── presentation/           # viva_defense_guide.md
-│   ├── privacy/                # privacy_design.md
-│   ├── research/               # secondary_dataset_analysis.md
-│   ├── safety/                 # safety_pathway.md
-│   └── reproducibility.md      # One-command reproduction instructions
-├── frontend/                   # React 19 + TypeScript + Vite + TailwindCSS application
-│   ├── src/                    # Components (Screening, Results, SafetyModal, Analytics)
-│   └── dist/                   # Production-compiled assets
-├── scripts/                    # Fully reproducible phase-by-phase scripts
-│   ├── phase2_data_audit.py    # Audit & item reconstruction
-│   ├── phase4_eda.py           # Statistical analysis & institutional clustering
-│   ├── phase5_6_7_ml_pipeline.py # 5-fold grouped CV, benchmarking, calibration
-│   ├── phase8_shap_verification.py # SHAP attribution & non-causal audit
-│   ├── phase9_secondary_research.py # China & UK cohort analysis
-│   └── phase10_freeze_artifacts.py # Production artifact packaging
-├── nivara/                # Core Python package
-│   ├── backend/                # FastAPI app, async SQLAlchemy models, Pydantic schemas
-│   ├── features/               # Canonical feature contract & leakage auditor
-│   ├── models/                 # InferenceEngine (zero-retraining), SHAP explainer
-│   ├── privacy/                # Argon2id auth, RBAC, PII redactor, k>=5 suppression
-│   └── safety/                 # Deterministic crisis rules & verified contacts
-└── tests/                      # Automated test suite (24 tests across 7 domains)
-    ├── test_data.py            # Reconstruction & range validation
-    ├── test_ml.py              # Zero leakage & grouped CV isolation
-    ├── test_artifacts.py       # Artifact integrity & hash validation
-    ├── test_safety.py          # PHQ-9 item 9 deterministic intercept
-    ├── test_privacy.py         # Argon2id, PII logging, group suppression
-    ├── test_backend_api.py     # FastAPI endpoints & auth
-    └── test_e2e.py             # Full student journey E2E test with PostgreSQL 16
-```
+
+| Role | Email | Password | Scope | Default Login Page |
+| :--- | :--- | :--- | :--- | :--- |
+| **Platform Super Admin** | `admin@test.com` | `DemoAdmin2026!` | Global Platform Governance | `/login` $\to$ `/admin` |
+| **Institution Admin** | `admin@demo-univ.ac.in` | `DemoAdmin2026!` | Campus Workspace Management | `/login` $\to$ `/admin` |
+| **Clinic Counsellor** | `counsellor@demo-univ.ac.in` | `DemoCounsellor2026!` | Clinical Case Queue & Triage | `/login` $\to$ `/counsellor` |
+| **Organization Partner** | *(Self-registered)* | *(Set at registration)* | Institutional Partner Portal | `/org/login` $\to$ `/org/dashboard` |
 
 ---
 
-## 5. Quickstart & Reproduction
+## 5. Environment Configuration
 
-### 1. Execute Automated Tests (24/24 Verification)
+### Backend `.env` Configuration (Render / Local)
+```ini
+PROJECT_NAME="Nivara AI"
+VERSION="1.1.0"
+SECRET_KEY="your-secure-jwt-secret-key"
+ACCESS_TOKEN_EXPIRE_MINUTES=120
+
+# Supabase PostgreSQL Session Pooler URL (URL-encoded password)
+DATABASE_URL=postgresql+asyncpg://postgres.<project_ref>:<url_encoded_password>@aws-0-ap-northeast-1.pooler.supabase.com:5432/postgres
+
+# Connection Pool & SSL Settings
+DB_SSL_REQUIRED=true
+DB_POOL_SIZE=5
+DB_MAX_OVERFLOW=5
+DB_POOL_RECYCLE=300
+DB_CONNECT_TIMEOUT=10
+
+# CORS Allowed Origins
+ALLOWED_ORIGINS="http://localhost:5173,http://localhost:3000,http://localhost:8000,https://nivara-wheat.vercel.app"
+```
+
+### Frontend Environment Variables (Vercel)
+In Vercel **Project Settings $\to$ Environment Variables**:
+* `VITE_API_URL` (or `VITE_API_BASE_URL`): `https://<your-render-backend-url>/api`
+
+---
+
+## 6. Local Quickstart & Development
+
+### 1. Run Automated Test Suite
 ```bash
 pytest -v tests/
 ```
 
-### 2. Launch FastAPI Backend Service (PostgreSQL 16)
+### 2. Run Database Migrations
 ```bash
-uvicorn nivara.backend.main:app --host 127.0.0.1 --port 8000 --reload
+alembic upgrade head
 ```
-Interactive API Swagger Docs: `http://localhost:8000/docs`
 
-### 3. Launch React Frontend
+### 3. Launch Backend Service
+```bash
+python -m uvicorn nivara.backend.main:app --host 127.0.0.1 --port 8000 --reload
+```
+Swagger UI: `http://localhost:8000/docs`
+
+### 4. Launch Frontend
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
-Interactive UI: `http://localhost:5173`
+Local Application: `http://localhost:5173`
 
-For the complete step-by-step reproduction sequence from raw CSVs, refer to [`docs/reproducibility.md`](file:///d:/Projects/Mental%20Health%20Assistance%20ML-Project/docs/reproducibility.md). For oral defense preparation, refer to [`docs/presentation/viva_defense_guide.md`](file:///d:/Projects/Mental%20Health%20Assistance%20ML-Project/docs/presentation/viva_defense_guide.md).
+---
+
+## 7. Repository Structure
+
+```
+.
+├── .python-version             # Python version pin (3.11.9) for Render
+├── runtime.txt                 # Buildpack runtime pin (python-3.11.9)
+├── vercel.json                 # Vercel SPA routing rewrites configuration
+├── pyproject.toml              # Authoritative PEP 517/621 project dependencies
+├── alembic/                    # Database migration chain
+│   └── versions/               # Baseline schema revision (20261102_0001)
+├── artifacts/                  # Frozen production model bundles & SHA-256 manifests
+│   ├── depression/             # model_bundle.joblib, metadata.json, manifest.json
+│   └── anxiety/                # model_bundle.joblib, metadata.json, manifest.json
+├── data/                       # Datasets & benchmark manifests
+│   └── raw/                    # Immutable cohorts (Bangladesh, Xinxiang, UK)
+├── docs/                       # Architecture, ML, Privacy, and Safety specifications
+├── frontend/                   # React 19 + TypeScript + Vite application
+│   ├── vercel.json             # Frontend SPA rewrite rules
+│   └── src/                    # Pages, components, api client, and auth
+├── nivara/                     # Core Python package
+│   ├── backend/                # FastAPI app, API routers, database engine, models, schemas
+│   ├── features/               # Feature contracts & leakage auditor
+│   ├── models/                 # InferenceEngine, TreeSHAP explainer
+│   ├── privacy/                # Argon2id auth, RBAC, PII redaction, k>=5 suppression
+│   └── safety/                 # Deterministic crisis rules & verified contacts
+├── scripts/                    # Seeding, audit, and verification utilities
+│   ├── seed_demo_accounts.py   # Populates demo accounts in PostgreSQL
+│   └── test_supabase_live_integration.py # Live Supabase end-to-end integration tests
+└── tests/                      # Automated unit, regression, and safety tests
+```
+
+---
+
+## 8. License & Acknowledgments
+Nivara AI is released for research and student wellbeing screening evaluation. Standardized clinical assessment scales (PHQ-9, GAD-7, PSS-10) are public domain instruments utilized under standard academic and clinical screening guidelines.
